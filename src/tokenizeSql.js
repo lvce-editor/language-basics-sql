@@ -25,11 +25,15 @@ export const StateMap = {
  * @enum number
  */
 export const TokenType = {
+  None: 0,
+  Text: 1,
   Function: 3,
 }
 
 export const TokenMap = {
   [TokenType.Function]: 'Function',
+  [TokenType.None]: 'None',
+  [TokenType.Text]: 'Text',
 }
 
 const RE_LINE_COMMENT_START = /^#/
@@ -70,7 +74,8 @@ const RE_STRING_SINGLE_QUOTE_CONTENT = /^[^']+/
 const RE_STRING_DOUBLE_QUOTE_CONTENT = /^[^"]+/
 const RE_ALIAS = /^\*.+/
 const RE_ANCHOR = /^\&.+/
-const RE_BUILTIN_FUNCTION = /^(?:abs|acos|asin|atan|atn2)\b/i
+const RE_BUILTIN_FUNCTION =
+  /^(?:abs|acos|asin|atan|atn2|ceiling|cos|cot|degrees|exp|floor|log|log10|pi|power|radians|rand|round|sign|sin|sqrt|square|tan)\b/i
 const RE_ANYTHING = /^.+/s
 
 export const initialLineState = {
