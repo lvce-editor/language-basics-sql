@@ -75,7 +75,7 @@ const RE_STRING_DOUBLE_QUOTE_CONTENT = /^[^"]+/
 const RE_ALIAS = /^\*.+/
 const RE_ANCHOR = /^\&.+/
 const RE_BUILTIN_FUNCTION =
-  /^(?:abs|acos|ascii|asin|atan|atn2|ceiling|char|charindex|cos|concat|difference|format|left|len|lower|ltrim|nchar|nodes|quotename|replace|replicate|reverse|right|rtrim|soundex|space|str|string_agg|string_escape|string_split|stuff|substring|translate|trim|unicode|upper|cot|dense_rank|degrees|exp|floor|log|log10|ntile|patindex|pi|power|radians|rand|rank|round|row_number|sign|sin|sqrt|square|tan|textptr|textvalid)\b/i
+  /^(?:cume_dist|first_value|lag|last_value|lead|percent_rank|percentile_cont|percentile_disc|abs|acos|ascii|asin|atan|atn2|ceiling|char|charindex|cos|concat|difference|format|left|len|lower|ltrim|nchar|nodes|quotename|replace|replicate|reverse|right|rtrim|soundex|space|str|string_agg|string_escape|string_split|stuff|substring|translate|trim|unicode|upper|cot|dense_rank|degrees|exp|floor|log|log10|ntile|patindex|pi|power|radians|rand|rank|round|row_number|sign|sin|sqrt|square|tan|textptr|textvalid)\b/i
 const RE_ANYTHING = /^.+/s
 
 export const initialLineState = {
