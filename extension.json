@@ -1,0 +1,12 @@
+{
+  "id": "builtin.language-basics-sql",
+  "name": "Language Basics Sql",
+  "description": "Provides syntax highlighting and bracket matching in Sql files.",
+  "languages": [
+    {
+      "id": "sql",
+      "extensions": [".sql", ".dsql"],
+      "tokenize": "src/tokenizeSql.js"
+    }
+  ]
+}
