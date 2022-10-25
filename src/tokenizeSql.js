@@ -28,15 +28,19 @@ export const TokenType = {
   None: 0,
   Text: 1,
   Function: 3,
+  Comment: 4,
+  Whitespace: 5,
 }
 
 export const TokenMap = {
   [TokenType.Function]: 'Function',
   [TokenType.None]: 'None',
   [TokenType.Text]: 'Text',
+  [TokenType.Comment]: 'Comment',
+  [TokenType.Whitespace]: 'Whitespace',
 }
 
-const RE_LINE_COMMENT_START = /^#/
+const RE_LINE_COMMENT = /^\-\-.*/s
 const RE_WHITESPACE = /^ +/
 const RE_CURLY_OPEN = /^\{/
 const RE_CURLY_CLOSE = /^\}/
@@ -101,6 +105,12 @@ export const tokenizeLine = (line, lineState) => {
       case State.TopLevelContent:
         if ((next = part.match(RE_BUILTIN_FUNCTION))) {
           token = TokenType.Function
+          state = State.TopLevelContent
+        } else if ((next = part.match(RE_LINE_COMMENT))) {
+          token = TokenType.Comment
+          state = State.TopLevelContent
+        } else if ((next = part.match(RE_WHITESPACE))) {
+          token = TokenType.Whitespace
           state = State.TopLevelContent
         } else if ((next = part.match(RE_ANYTHING))) {
           token = TokenType.Text
