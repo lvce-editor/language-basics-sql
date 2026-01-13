@@ -5,8 +5,12 @@
   "languages": [
     {
       "id": "sql",
-      "extensions": [".sql", ".dsql"],
+      "extensions": [
+        ".sql",
+        ".dsql"
+      ],
       "tokenize": "src/tokenizeSql.js"
     }
-  ]
+  ],
+  "repository": "https://github.com/lvce-editor/language-basics-sql"
 }
